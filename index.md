@@ -4,7 +4,7 @@ layout: page
 
 # About Me
 
-<img src="[https://caihanlin.com/caihanlin.jpg](https://github.com/ZhixuanWuA/ZhixuanWuA.github.io/blob/main/zhi.jpg)" class="floatpic" width="360" height="480">
+<img src="https://raw.githubusercontent.com/ZhixuanWuA/ZhixuanWuA.github.io/main/zhi.jpg" class="floatpic" width="360" height="480">
 
 Here is **Zhixuan Wu (吴祉璇)**.
 
