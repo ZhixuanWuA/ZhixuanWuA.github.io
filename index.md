@@ -12,7 +12,6 @@ Here is **Zhixuan Wu (吴祉璇)**.
 
 - **Sep 2023 - Future：** Beijing University of Posts and Telecommunications (Ph.D. Student, supervised by [Prof. Cheng Bo])
 - **Sep 2020 - June 2023:** Beijing Union University (M.E., supervised by [Prof. Nan Ma])
----
 
 ## Research Interests
 
