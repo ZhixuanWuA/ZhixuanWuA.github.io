@@ -16,7 +16,7 @@ Here is **Zhixuan Wu (吴祉璇)**.
 ## Research Interests
 
 - Machine Vision
-- Multi-modal interactive cognition
+- Multi-modal Understanding
 - Interactive Cognition
 - Action Recognition
 
