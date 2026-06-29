@@ -81,18 +81,86 @@
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Zhixuan Wu (吴祉璇)'s Homepage" />
 
 
-  <style>
+  <!-- <style>
     code.custom-tag {
       display: inline-block;
-      background-color: #224b8d; /* 深蓝色背景 */
+      background-color: #224b8d;
       color: #FFFFFF;
       font-size: 0.5rem;
       padding: 0.1rem 0.2rem;
       border-radius: 0px;
       font-family: 'Courier New', Courier, monospace;
-      font-weight: bold; /* 加粗字体 */
+      font-weight: bold;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       vertical-align: middle;
+    }
+  </style> -->
+  <style>
+    /* ===== 统一设计系统 ===== */
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --primary-dark: #1d4ed8;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --bg-white: #ffffff;
+      --bg-light: #f8fafc;
+      --border-color: #e2e8f0;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    /* 通用卡片样式 */
+    .card-modern {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+    .card-modern:hover {
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+
+    /* 会议标签颜色方案 */
+    .badge-top {
+      background: #eef2ff;
+      color: #4338ca;
+      border: 1px solid #c7d2fe;
+    }
+    .badge-journal {
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+    }
+    .badge-other {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+    .badge-ongoing {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    /* 通用标题 */
+    .section-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .section-divider {
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin-top: 0.5rem;
     }
   </style>
   <title>Zhixuan Wu (吴祉璇)'s Homepage</title>
@@ -158,39 +226,21 @@
 
             <ul class="navbar-nav d-md-inline-flex">
 
-<!--               <li class="nav-item">
-                <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
-              </li> -->
-
               <li class="nav-item">
                 <a class="nav-link " href="/#publications" data-target="#publications"><span>Publications</span></a>
               </li>
-
-<!--               <li class="nav-item">
-                <a class="nav-link " href="/#grants" data-target="#grants"><span>Grants</span></a>
-              </li> -->
-
-              <!-- <li class="nav-item">
-                <a class="nav-link " href="/#awards" data-target="#awards"><span>Awards & Honors</span></a>
-              </li> -->
 
               <li class="nav-item">
                 <a class="nav-link " href="/#services" data-target="#services"><span>Academic Services</span></a>
               </li>
 
-<!--               <li class="nav-item">
-                <a class="nav-link " href="/#experience" data-target="#experience"><span>Experience</span></a>
-              </li> -->
+              <li class="nav-item">
+                <a class="nav-link " href="/#honors" data-target="#honors"><span>Honors & Awards</span></a>
 
             </ul>
           </div>
 
           <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-            <!-- <li class="nav-item">
-              <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search"
-                  aria-hidden="true"></i></a>
-            </li> -->
 
             <li class="nav-item dropdown theme-dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
@@ -223,120 +273,275 @@
 
     <span class="js-widget-page d-none"></span>
 
-    <section id="about" class="home-section wg-about  ">
-      <div class="home-section-bg ">
+<!-- ===== About 区域 - 完整优化版 ===== -->
+<section id="about" class="home-section wg-about" style="padding: 4rem 0 2rem 0; background-color: #fafbfc;">
+  <div class="home-section-bg"></div>
+  <div class="container">
 
-      </div>
-      <div class="container">
+    <div class="row" style="display: flex; align-items: stretch; gap: 2rem;">
 
+      <!-- ===== 左侧：头像 + 社交 ===== -->
+      <div class="col-12 col-lg-4" style="flex: 0 0 30%; max-width: 30%; display: flex; flex-direction: column; align-items: center; text-align: center;">
 
-        <div class="row">
-          <div class="col-12 col-lg-4">
-            <div id="profile">
+        <div id="profile" style="width: 100%;">
+          <!-- 头像 -->
+          <img class="avatar avatar-circle" width="220" height="220" src="/authors/admin/zhi.jpg" alt="Zhixuan Wu" style="border-radius: 50%; border: 3px solid #ffffff; box-shadow: 0 8px 32px rgba(0,0,0,0.10); margin-bottom: 1.2rem;">
 
-              <img class="avatar avatar-circle" width="270" height="270" src="/authors/admin/zhi.jpg" alt="Zhixuan Wu">
+          <!-- 姓名 -->
+          <h1 style="font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-bottom: 0.2rem; letter-spacing: -0.02em;">
+            Zhixuan Wu
+          </h1>
+          <h2 style="font-size: 1.1rem; font-weight: 400; color: #2563eb; margin-bottom: 0.5rem; font-family: 'STKaiti', '华文楷体', KaiTi, serif;">
+            吴祉璇
+          </h2>
 
-              <div class="portrait-title">
-
-                <h3>
-                  <a href="https://www.hqu.edu.cn/" target="_blank" rel="noopener">
-                  </a>
-                </h3>
-
-              </div>
-
-              <ul class="network-icon" aria-hidden="true">
-
-                <!-- <li>
-                  <a href="mailto:yueduan@smail.nju.edu.cn" aria-label="envelope">
-                    <i class="fas fa-envelope big-icon"></i>
-                  </a>
-                </li> -->
-
-                <li>
-                  <a href="https://scholar.google.com/citations?user=BpjIMQcAAAAJ&hl=zh-CN" target="_blank"
-                    rel="noopener" aria-label="graduation-cap">
-                    <!-- <i class="fas fa-graduation-cap big-icon"></i> -->
-                    <img src="media\icons\brands\gs.png" style="width: 2rem; height: 2rem;" alt="Google Scholar" />
-                  </a>
-                </li>
-
-                <li>
-                  <a href="zhixuan.wu.a@gmail.com" target="_blank"
-                    rel="noopener" aria-label="graduation-cap">
-                    <img src="media\icons\brands\email.webp" style="width: 2rem; height: 2rem;" alt="email" />
-                  </a>
-                </li>
-
-      
-              </ul>
-
+          <!-- 头衔 + 单位 -->
+          <div style="margin-bottom: 1rem;">
+            <div style="font-size: 0.95rem; font-weight: 500; color: #1e293b;">PhD Candidate</div>
+            <div style="font-size: 0.82rem; color: #64748b;">
+              <span style="display: inline-block; background: #eff6ff; color: #2563eb; padding: 1px 12px; border-radius: 12px; font-size: 0.7rem; font-weight: 500; margin-top: 4px;">
+                🏫 Beijing University of Posts and Telecommunications
+              </span>
             </div>
           </div>
-          <div class="col-12 col-lg-8">
 
-            <div class="profile-section" style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333;">
-            <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem;">
-              Zhixuan Wu <span style="font-family: 'STKaiti', '华文楷体', KaiTi, serif; font-weight: 500;">(吴祉璇)</span>
-            </h1>
-          
-            <h2 style="font-size: 1.4rem; font-weight: 400; color: #555; margin-bottom: 1rem;">
-              A PhD Candidate
-            </h2>
-          
-            <!-- <h3 style="font-size: 1.1rem; font-weight: 400; color: #666; margin-bottom: 1.5rem;">
-              E-mail: zhixuan.wu.a@gmail.com
-            </h3> -->
-          
-            <div class="col-md-7" style="padding-left: 0;">
-              <!-- Education Section -->
-              <div class="section-subheading" style="margin: 0 0 1rem 0; font-size: 1.25rem; font-weight: 600; color: #2c3e50;">
-                🎓 Education
+
+          <!-- 社交图标 -->
+          <ul class="network-icon" aria-hidden="true" style="display: flex; gap: 1rem; justify-content: center; list-style: none; padding: 0; margin: 0;">
+            <li>
+              <a href="https://scholar.google.com/citations?user=BpjIMQcAAAAJ&hl=zh-CN" target="_blank" rel="noopener" aria-label="Google Scholar" style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 50%;
+                color: #2563eb;
+                font-size: 1.2rem;
+                text-decoration: none;
+                transition: all 0.25s ease;
+              " onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(37,99,235,0.25)'" onmouseout="this.style.background='#f8fafc'; this.style.color='#2563eb'; this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <i class="ai ai-google-scholar" style="font-size: 1.3rem;"></i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:zhixuan.wu.a@gmail.com" target="_blank" rel="noopener" aria-label="Email" style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 50%;
+                color: #2563eb;
+                font-size: 1.2rem;
+                text-decoration: none;
+                transition: all 0.25s ease;
+              " onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(37,99,235,0.25)'" onmouseout="this.style.background='#f8fafc'; this.style.color='#2563eb'; this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <i class="fas fa-envelope" style="font-size: 1.2rem;"></i>
+              </a>
+            </li>
+            <!-- 可以继续添加 GitHub / Twitter 等 -->
+            <!--
+            <li>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub" style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 50%;
+                color: #2563eb;
+                font-size: 1.2rem;
+                text-decoration: none;
+                transition: all 0.25s ease;
+              " onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(37,99,235,0.25)'" onmouseout="this.style.background='#f8fafc'; this.style.color='#2563eb'; this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                <i class="fab fa-github" style="font-size: 1.2rem;"></i>
+              </a>
+            </li>
+            -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== 右侧：个人信息 ===== -->
+      <div class="col-12 col-lg-8" style="flex: 1; min-width: 0;">
+
+        <div class="profile-section" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #0f172a;">
+
+          <!-- 头衔 -->
+          <h2 style="font-size: 1.3rem; font-weight: 500; color: #8f25eb; margin-bottom: 0.8rem;">
+            👋 Hello! I'm Zhixuan.
+          </h2>
+
+          <!-- 简短介绍 -->
+          <p style="font-size: 0.92rem; color: #475569; line-height: 1.7; margin-bottom: 0.5rem;">
+            I am a PhD candidate at Beijing University of Posts and Telecommunications, 
+            advised by Prof. Cheng Bo. 
+            I am also a visiting research fellow at 
+            Nanyang Technological University, 
+            working with Assoc. Prof. Soujanya Poria.
+          </p>
+          <p style="font-size: 0.92rem; color: #475569; line-height: 1.7; margin-bottom: 0.5rem;">
+            My research lies at the intersection of <strong style="color: #0f172a;">machine vision</strong>, 
+            <strong style="color: #0f172a;">multi-modal understanding</strong>, and 
+            <strong style="color: #0f172a;">interactive cognition</strong>, 
+            with a focus on building AI systems that can perceive, reason, and interact in complex environments.
+          </p>
+
+          <!-- Education Section - 时间线风格 -->
+              <div class="section-subheading" style="margin: 0 0 1.2rem 0; font-size: 1.1rem; font-weight: 600; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2rem;">🎓</span> Education
               </div>
-              
-              <div style="margin-bottom: 1.5rem;">
-                <p style="margin: 0 0 0.8rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; line-height: 1.6;">
-                  <span style="position: absolute; left: 0.5rem; color: #7f8c8d;">•</span>
-                  <strong style="font-weight: 600; color: #2c3e50;">Sep 2023 - Present:</strong> Beijing University of Posts and Telecommunications (PhD Candidate, advised by <a href="https://teacher.bupt.edu.cn/chengbo/en/index.htm" target="_blank" style="color: #3498db; text-decoration: none; transition: color 0.2s;">Prof. Cheng Bo</a>)
-                </p>
-                <p style="margin: 0 0 0.8rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; line-height: 1.6;">
-                  <span style="position: absolute; left: 0.5rem; color: #7f8c8d;">•</span>
-                  <strong style="font-weight: 600; color: #2c3e50;">Dec 2025 - Dec 2026:</strong> Nanyang Technological University (Visiting Research Fellow, advised by <a href="https://soujanyaporia.github.io/" target="_blank" style="color: #3498db; text-decoration: none; transition: color 0.2s;">Assoc. Prof.‌ Soujanya</a>)
-                </p>
-                <p style="margin: 0 0 0.8rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; line-height: 1.6;">
-                  <span style="position: absolute; left: 0.5rem; color: #7f8c8d;">•</span>
-                  <strong style="font-weight: 600; color: #2c3e50;">Sep 2020 - June 2023:</strong> Beijing Union University (M.E., advised by <a href="https://baike.baidu.com/item/%E9%A9%AC%E6%A5%A0/16836805" target="_blank" style="color: #3498db; text-decoration: none; transition: color 0.2s;">Prof. Nan Ma</a>)
-                </p>
+
+              <div style="position: relative; padding-left: 28px;">
+                <!-- 时间线竖线 -->
+                <div style="position: absolute; left: 6px; top: 8px; bottom: 4px; width: 2px; background: linear-gradient(to bottom, #dfc9f1, #eed3f5); border-radius: 2px;"></div>
+
+                <!-- 条目 1: PhD -->
+                <div style="position: relative; margin-bottom: 0.8rem;">
+                  <!-- 时间线圆点 -->
+                  <div style="position: absolute; left: -22px; top: 6px; width: 12px; height: 12px; background: #debdf3; border: 2px solid #dd99ee; border-radius: 50%; box-shadow: 0 0 0 3px #f5f3ff;"></div>
+                  
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px;">
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.8rem;">Sep 2023 – Present</span>
+                    <span style="color: #94a3b8; font-size: 0.8rem;">·</span>
+                    <span style="font-weight: 600; color: #1e293b; font-size: 0.8rem;">Beijing University of Posts and Telecommunications</span>
+                  </div>
+                  <div style="font-size: 0.75rem; color: #475569; margin-top: 2px; padding-left: 2px;">
+                    PhD Candidate · advised by 
+                    <a href="https://teacher.bupt.edu.cn/chengbo/en/index.htm" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">Prof. Cheng Bo</a>
+                  </div>
+                </div>
+
+                <!-- 条目 2: Visiting -->
+                <div style="position: relative; margin-bottom: 0.8rem;">
+                  <div style="position: absolute; left: -22px; top: 6px; width: 12px; height: 12px; background: #debdf3; border: 2px solid #dd99ee; border-radius: 50%; box-shadow: 0 0 0 3px #f5f3ff;"></div>
+                  
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px;">
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.8rem;">Dec 2025 – Dec 2026</span>
+                    <span style="color: #94a3b8; font-size: 0.8rem;">·</span>
+                    <span style="font-weight: 600; color: #1e293b; font-size: 0.8rem;">Nanyang Technological University</span>
+                  </div>
+                  <div style="font-size: 0.75rem; color: #475569; margin-top: 2px; padding-left: 2px;">
+                    Visiting Research Fellow · advised by 
+                    <a href="https://soujanyaporia.github.io/" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">Assoc. Prof. Soujanya Poria</a>
+                  </div>
+                </div>
+
+                <!-- 条目 3: Master -->
+                <div style="position: relative; margin-bottom: 0.2rem;">
+                  <div style="position: absolute; left: -22px; top: 6px; width: 12px; height: 12px; background: #debdf3; border: 2px solid #dd99ee; border-radius: 50%; box-shadow: 0 0 0 3px #f5f3ff;"></div>
+                  
+                  <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px;">
+                    <span style="font-weight: 700; color: #0f172a; font-size: 0.8rem;">Sep 2020 – June 2023</span>
+                    <span style="color: #94a3b8; font-size: 0.8rem;">·</span>
+                    <span style="font-weight: 600; color: #1e293b; font-size: 0.8rem;">Beijing Union University</span>
+                  </div>
+                  <div style="font-size: 0.75rem; color: #475569; margin-top: 2px; padding-left: 2px;">
+                    M.E. · advised by 
+                    <a href="https://baike.baidu.com/item/%E9%A9%AC%E6%A5%A0/16836805" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">Prof. Nan Ma</a>
+                  </div>
+                </div>
               </div>
             
-              <!-- Research Interests Section -->
-              <div class="section-subheading" style="margin: 1.5rem 0 1rem 0; font-size: 1.25rem; font-weight: 600; color: #2c3e50;">
-                🌱 Research Interests
+              <!-- Research Interests Section - 标签风格 -->
+              <div class="section-subheading" style="margin: 2rem 0 1rem 0; font-size: 1.1rem; font-weight: 600; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2rem;">🌱</span> Research Interests
               </div>
-              
-              <div style="margin-bottom: 1.5rem;">
-                <p style="margin: 0 0 0.6rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; line-height: 1.6;">
-                  <span style="position: absolute; left: 0.5rem; color: #7f8c8d;">•</span>Machine Vision
-                </p>
-                <p style="margin: 0 0 0.6rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; line-height: 1.6;">
-                  <span style="position: absolute; left: 0.5rem; color: #7f8c8d;">•</span>Multi-modal Understanding
-                </p>
-                <p style="margin: 0 0 0.6rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; line-height: 1.6;">
-                  <span style="position: absolute; left: 0.5rem; color: #7f8c8d;">•</span>Interactive Cognition
-                </p>
-                <p style="margin: 0 0 0.6rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; line-height: 1.6;">
-                  <span style="position: absolute; left: 0.5rem; color: #7f8c8d;">•</span>Action Recognition
-                </p>
-                <p style="margin: 0; font-size: 0.9rem; line-height: 1.6; color: #2c3e50;">
-                  💡 I’d be glad to talk about ideas or work together, so feel free to email me at  <a href="mailto:@ust.hk" style="color: #2980b9; text-decoration: none;">zhixuan.wu.a@gmail.com</a>.
-                </p>
+
+              <div style="
+                background: #ffffff;
+                border-radius: 12px;
+                padding: 1.2rem 1.5rem 1rem 1.5rem;
+                border: 1px solid #e2e8f0;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+              ">
+                <!-- 兴趣标签 -->
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.8rem;">
+                  <span style="
+                    display: inline-block;
+                    background: #eff6ff;
+                    color: #1d4ed8;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    padding: 4px 14px;
+                    border-radius: 20px;
+                    border: 1px solid #bfdbfe;
+                    transition: all 0.2s;
+                  " onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'" onmouseout="this.style.background='#eff6ff'; this.style.color='#1d4ed8'; this.style.borderColor='#bfdbfe'">
+                    Machine Vision
+                  </span>
+                  <span style="
+                    display: inline-block;
+                    background: #f5f3ff;
+                    color: #6d28d9;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    padding: 4px 14px;
+                    border-radius: 20px;
+                    border: 1px solid #ddd6fe;
+                    transition: all 0.2s;
+                  " onmouseover="this.style.background='#7c3aed'; this.style.color='#ffffff'; this.style.borderColor='#7c3aed'" onmouseout="this.style.background='#f5f3ff'; this.style.color='#6d28d9'; this.style.borderColor='#ddd6fe'">
+                    Multi-modal Understanding
+                  </span>
+                  <span style="
+                    display: inline-block;
+                    background: #fef3c7;
+                    color: #92400e;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    padding: 4px 14px;
+                    border-radius: 20px;
+                    border: 1px solid #fde68a;
+                    transition: all 0.2s;
+                  " onmouseover="this.style.background='#f59e0b'; this.style.color='#ffffff'; this.style.borderColor='#f59e0b'" onmouseout="this.style.background='#fef3c7'; this.style.color='#92400e'; this.style.borderColor='#fde68a'">
+                    Interactive Cognition
+                  </span>
+                  <span style="
+                    display: inline-block;
+                    background: #ecfdf5;
+                    color: #065f46;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    padding: 4px 14px;
+                    border-radius: 20px;
+                    border: 1px solid #a7f3d0;
+                    transition: all 0.2s;
+                  " onmouseover="this.style.background='#10b981'; this.style.color='#ffffff'; this.style.borderColor='#10b981'" onmouseout="this.style.background='#ecfdf5'; this.style.color='#065f46'; this.style.borderColor='#a7f3d0'">
+                    Action Recognition
+                  </span>
+                </div>
+
+                <!-- 底部邀请语 -->
+                <div style="
+                  font-size: 0.85rem; 
+                  color: #64748b; 
+                  line-height: 1.5; 
+                  padding-top: 0.6rem; 
+                  border-top: 1px dashed #e2e8f0;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                ">
+                  <span>💡</span>
+                  <span>I'd be glad to talk about ideas or work together — feel free to email me at 
+                    <a href="mailto:zhixuan.wu.a@gmail.com" style="color: #2563eb; text-decoration: none; font-weight: 500; border-bottom: 1px solid #bfdbfe;">
+                      zhixuan.wu.a@gmail.com
+                    </a>
+                  </span>
+                </div>
               </div>
-            </div>
-          </div>
 
+    </div>
+  </div>
+</section>
 
-      </div>
-    </section>
 
 
     <section id="info" class="home-section wg-info  ">
@@ -347,698 +552,519 @@
 
 
       <!-- publications -->
-       <!-- <section id="publications" class="home-section wg-pages">
-        <div class="home-section-bg"></div>
-        <div class="container">
-          <div class="section-heading mb-4" style="text-align: left;">
-            <h1 class="mb-0" style="font-weight: 700; color: #2c3e50;">Publications</h1>
-          </div>
-          <div class="publications-list" style="text-align: left; max-width: 1050px; margin: 0 auto;">
-          <div style="margin: 4rem 0 2rem 0; border-top: 1px solid #eee; padding-top: 1.5rem;">
-              <h2 style="font-weight: 600; color: #141414; font-size: 1.4rem; margin-bottom: 1.5rem;">
-                Selected Publications
-              </h2>
-            </div> -->
-            <section id="publications" class="home-section wg-pages" style="padding: 5rem 0; background-color: #fafbfc;">
-              <div class="container">
-                
-                <div class="section-heading mb-5" style="text-align: left; padding-left: 0;">
-                  <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                    <h1 style="
-                      font-weight: 800; 
-                      color: #1a1a1a; 
-                      font-size: 1.75rem; 
-                      letter-spacing: -0.03em; 
-                      margin: 0;
-                    "> <span style="font-size: 1.5rem; margin-right: 12px; filter: grayscale(0.2);">📚</span>
-                      Publications
-                    </h1>
-                  </div>
-                  <div style="width: 40px; height: 3px; background: #3498db; border-radius: 2px;"></div>
-                </div>
+       <section id="publications" class="home-section wg-pages" style="padding: 3rem 0; background-color: #fafbfc;">
+          <div class="container">
+            
+            <!-- 区域标题 -->
+            <div class="section-heading mb-5" style="text-align: left; padding-left: 0;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                <span style="font-size: 1.5rem;">📚</span>
+                <h1 style="font-weight: 700; color: #0f172a; font-size: 1.6rem; letter-spacing: -0.02em; margin: 0;">
+                  Publications
+                </h1>
+              </div>
+              <div style="width: 40px; height: 3px; background: #2563eb; border-radius: 2px;"></div>
+            </div>
 
                 <!-- ICML 2026 -->
-                 <div class="publications-list" style="max-width: 1100px;">
-                  
-                  <div class="publication-item" style="
+                 <div class="publication-item" style="
                     background: #ffffff;
-                    padding: 1.5rem;
-                    margin-bottom: 1.2rem;
-                    border-radius: 8px;
-                    border: 1px solid #edf2f7;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                    transition: all 0.3s ease;
+                    padding: 1.2rem 1.5rem;
+                    margin-bottom: 1rem;
+                    border-radius: 12px;
+                    border: 1px solid #e2e8f0;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                    transition: all 0.25s ease;
                     display: flex;
-                    gap: 20px;
-                  ">
+                    gap: 16px;
+                    align-items: flex-start;
+                  " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
                     
-                    <div style="flex-shrink: 0; width: 100px;">
+                    <!-- 左侧：会议标签 -->
+                    <div style="flex-shrink: 0; width: 122px; padding-top: 2px;">
                       <span style="
                         display: inline-block;
-                        width: 100%;
-                        padding: 4px 0;
-                        background: linear-gradient(to right, #58038d, #70068d);
-                        color: white;
-                        border-radius: 4px;
+                        padding: 3px 12px;
+                        font-size: 0.65rem;
                         font-weight: 700;
-                        font-size: 0.8rem;
-                        text-align: center;
-                        border: 1px solid #e2e8f0;
+                        letter-spacing: 0.04em;
+                        border-radius: 20px;
                         text-transform: uppercase;
-                      ">ICML</span>
+                        background: #eef2ff;
+                        color: #4338ca;
+                        border: 1px solid #c7d2fe;
+                        white-space: nowrap;
+                      ">ICML 2026</span>
                     </div>
 
-                    <div style="flex-grow: 1;">
-                      <a href="" target="_blank" rel="noopener" style="
-                        text-decoration: none; 
-                        color: #2d3748; 
-                        font-size: 1.1rem;
-                        font-weight: 700; 
+                    <!-- 右侧：论文信息 -->
+                    <div style="flex-grow: 1; min-width: 0;">
+                      <!-- 标题 -->
+                      <a href="https://arxiv.org/pdf/2604.14692" target="_blank" rel="noopener" style="
+                        text-decoration: none;
+                        color: #0f172a;
+                        font-size: 1rem;
+                        font-weight: 600;
                         line-height: 1.4;
-                        display: block; 
-                        margin-bottom: 0.5rem;
+                        display: block;
+                        margin-bottom: 0.4rem;
                         transition: color 0.2s;
-                      " onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='#2d3748'">
-                        <span>Chain-of-Glimpse: Search-Guided Progressive Object-Grounded Reasoning for Video Understanding</span>
+                      " onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
+                        Chain-of-Glimpse: Search-Guided Progressive Object-Grounded Reasoning for Video Understanding
                       </a>
 
-                      <div class="article-metadata" style="font-size: 0.8rem; color: #4a5568; line-height: 1.6;">
-                        <div style="margin-bottom: 0.2rem;">
-                          <span style="font-weight: 700; color: #2d3748; border-bottom: 1.5px solid #cbd5e0;">Zhixuan Wu*</span>, <span>Quanxing Zha*, Teng Wang, Genbao Xu, Wenyuan Gu, Wei Rao, Nan Ma, Bo Cheng†, Soujanya Poria†</span>
-                        </div>
-                        <div style="color: #718096; font-style: italic; font-size: 0.85rem;">
-                          International Conference on Machine Learning (ICML), 2026.
-                        </div>
+                      <!-- 作者 -->
+                      <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 0.3rem;">
+                        <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu*</span>
+                        <span style="color: #94a3b8;">,</span>
+                        <span>Quanxing Zha*</span>
+                        <span style="color: #94a3b8;">,</span>
+                        <span>Teng Wang</span>
+                        <span style="color: #94a3b8;">,</span>
+                        <span>Genbao Xu</span>
+                        <span style="color: #94a3b8;">,</span>
+                        <span>Wenyuan Gu</span>
+                        <span style="color: #94a3b8;">,</span>
+                        <span>Wei Rao</span>
+                        <span style="color: #94a3b8;">,</span>
+                        <span>Nan Ma</span>
+                        <span style="color: #94a3b8;">,</span>
+                        <span>Bo Cheng†</span>
+                        <span style="color: #94a3b8;">,</span>
+                        <span>Soujanya Poria†</span>
                       </div>
 
-                      <div class="btn-links" style="margin-top: 0.8rem;">
-                        <a class="btn" href="" target="_blank" rel="noopener" style="
+                      <!-- 会议信息 -->
+                      <div style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 0.6rem;">
+                        International Conference on Machine Learning (ICML), 2026.
+                      </div>
+
+                      <!-- 操作按钮 -->
+                      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <a href="https://arxiv.org/pdf/2604.14692" target="_blank" rel="noopener" style="
                           display: inline-flex;
                           align-items: center;
-                          padding: 4px 12px;
-                          font-size: 0.8rem;
+                          gap: 4px;
+                          padding: 3px 12px;
+                          font-size: 0.75rem;
                           font-weight: 600;
-                          color: #3498db;
-                          border: 1px solid #3498db;
-                          border-radius: 4px;
+                          color: #2563eb;
+                          background: #eff6ff;
+                          border: 1px solid #bfdbfe;
+                          border-radius: 6px;
                           text-decoration: none;
                           transition: all 0.2s;
-                        " onmouseover="this.style.background='#3498db'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#3498db'">
-                          <span style="margin-right: 4px;">📄</span> PDF
+                        " onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'" onmouseout="this.style.background='#eff6ff'; this.style.color='#2563eb'; this.style.borderColor='#bfdbfe'">
+                          <span>📄</span> PDF
                         </a>
                       </div>
                     </div>
                   </div>
                 
-                <!-- TOMM 2026 -->
-                <div class="publications-list" style="max-width: 1100px;">
-                  
+                <!-- ===== TOMM 2026 ===== -->
                   <div class="publication-item" style="
                     background: #ffffff;
-                    padding: 1.5rem;
-                    margin-bottom: 1.2rem;
-                    border-radius: 8px;
-                    border: 1px solid #edf2f7;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                    transition: all 0.3s ease;
+                    padding: 1.2rem 1.5rem;
+                    margin-bottom: 1rem;
+                    border-radius: 12px;
+                    border: 1px solid #e2e8f0;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                    transition: all 0.25s ease;
                     display: flex;
-                    gap: 20px;
-                  ">
+                    gap: 16px;
+                    align-items: flex-start;
+                  " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
                     
-                    <div style="flex-shrink: 0; width: 100px;">
-                      <span style="
-                        display: inline-block;
-                        width: 100%;
-                        padding: 4px 0;
-                        background: linear-gradient(to right, #03284e, #094678);
-                        color: white;
-                        border-radius: 4px;
-                        font-weight: 700;
-                        font-size: 0.8rem;
-                        text-align: center;
-                        border: 1px solid #e2e8f0;
-                        text-transform: uppercase;
-                      ">TOMM</span>
+                    <div style="flex-shrink: 0; width: 122px; padding-top: 2px;">
+                      <span style="display: inline-block; padding: 3px 12px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; white-space: nowrap;">TOMM 2026</span>
                     </div>
 
-                    <div style="flex-grow: 1;">
-                      <a href="" target="_blank" rel="noopener" style="
-                        text-decoration: none; 
-                        color: #2d3748; 
-                        font-size: 1.1rem;
-                        font-weight: 700; 
-                        line-height: 1.4;
-                        display: block; 
-                        margin-bottom: 0.5rem;
-                        transition: color 0.2s;
-                      " onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='#2d3748'">
+                    <div style="flex-grow: 1; min-width: 0;">
+                      <a href="" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 1rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.4rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
                         Multi-modal Temporal Relation Network for Video Understanding
                       </a>
-
-                      <div class="article-metadata" style="font-size: 0.8rem; color: #4a5568; line-height: 1.6;">
-                        <div style="margin-bottom: 0.2rem;">
-                          <span style="font-weight: 700; color: #2d3748; border-bottom: 1.5px solid #cbd5e0;">Zhixuan Wu</span>,  <span>Quanxing Zha, Shanshan Zhao, Bo Cheng†, Xin Liu, Xiaojie Wei, Changbao Li, Pingli Gu</span>
-                        </div>
-                        <div style="color: #718096; font-style: italic; font-size: 0.85rem;">
-                          ACM Transactions on Multimedia Computing, Communications and Applications (Accept).
-                        </div>
+                      <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 0.3rem;">
+                        <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Quanxing Zha<span style="color: #94a3b8;">,</span> Shanshan Zhao<span style="color: #94a3b8;">,</span> Bo Cheng†<span style="color: #94a3b8;">,</span> Xin Liu<span style="color: #94a3b8;">,</span> Xiaojie Wei<span style="color: #94a3b8;">,</span> Changbao Li<span style="color: #94a3b8;">,</span> Pingli Gu
                       </div>
-
-                      <div class="btn-links" style="margin-top: 0.8rem;">
-                        <a class="btn" href="" target="_blank" rel="noopener" style="
-                          display: inline-flex;
-                          align-items: center;
-                          padding: 4px 12px;
-                          font-size: 0.8rem;
-                          font-weight: 600;
-                          color: #3498db;
-                          border: 1px solid #3498db;
-                          border-radius: 4px;
-                          text-decoration: none;
-                          transition: all 0.2s;
-                        " onmouseover="this.style.background='#3498db'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#3498db'">
-                          <span style="margin-right: 4px;">📄</span> PDF
+                      <div style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 0.6rem;">
+                        ACM Transactions on Multimedia Computing, Communications and Applications, vol. 22, no. 6, pp. 1-24, 2026.
+                      </div>
+                      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <a href="" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 12px; font-size: 0.75rem; font-weight: 600; color: #2563eb; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'" onmouseout="this.style.background='#eff6ff'; this.style.color='#2563eb'; this.style.borderColor='#bfdbfe'">
+                          <span>📄</span> PDF
                         </a>
                       </div>
                     </div>
                   </div>
-
-                <!-- COLING 2025 -->
-                 <div class="publications-list" style="max-width: 1100px;">
+                
+                <!-- ===== COLING 2025 ===== -->
+                <div class="publication-item" style="
+                  background: #ffffff;
+                  padding: 1.2rem 1.5rem;
+                  margin-bottom: 1rem;
+                  border-radius: 12px;
+                  border: 1px solid #e2e8f0;
+                  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                  transition: all 0.25s ease;
+                  display: flex;
+                  gap: 16px;
+                  align-items: flex-start;
+                " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
                   
-                  <div class="publication-item" style="
-                    background: #ffffff;
-                    padding: 1.5rem;
-                    margin-bottom: 1.2rem;
-                    border-radius: 8px;
-                    border: 1px solid #edf2f7;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                    transition: all 0.3s ease;
-                    display: flex;
-                    gap: 20px;
-                  ">
-                    
-                    <div style="flex-shrink: 0; width: 100px;">
-                      <span style="
-                        display: inline-block;
-                        width: 100%;
-                        padding: 4px 0;
-                        background: linear-gradient(to right, #58038d, #70068d);
-                        color: white;
-                        border-radius: 4px;
-                        font-weight: 700;
-                        font-size: 0.8rem;
-                        text-align: center;
-                        border: 1px solid #e2e8f0;
-                        text-transform: uppercase;
-                      ">COLING</span>
-                    </div>
+                  <div style="flex-shrink: 0; width: 122px; padding-top: 2px;">
+                    <span style="display: inline-block; padding: 3px 12px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; white-space: nowrap;">COLING 2025</span>
+                  </div>
 
-                    <div style="flex-grow: 1;">
-                      <a href="https://aclanthology.org/2025.coling-main.483.pdf" target="_blank" rel="noopener" style="
-                        text-decoration: none; 
-                        color: #2d3748; 
-                        font-size: 1.1rem;
-                        font-weight: 700; 
-                        line-height: 1.4;
-                        display: block; 
-                        margin-bottom: 0.5rem;
-                        transition: color 0.2s;
-                      " onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='#2d3748'">
-                        <span style="font-weight: 600; color: #7e22ce;">(🎉 Outstanding Paper)</span> VideoQA-TA: Temporal-Aware Multi-Modal Video Question Answering
+                  <div style="flex-grow: 1; min-width: 0;">
+                    <a href="https://aclanthology.org/2025.coling-main.483.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 1rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.4rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
+                      <span style="display: inline-block; background: #fef3c7; color: #92400e; font-size: 0.6rem; font-weight: 700; padding: 1px 10px; border-radius: 12px; margin-right: 6px; vertical-align: middle;">🎉</span>
+                      VideoQA-TA: Temporal-Aware Multi-Modal Video Question Answering
+                    </a>
+                    <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 0.3rem;">
+                      <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Bo Cheng†<span style="color: #94a3b8;">,</span> Jiale Han<span style="color: #94a3b8;">,</span> Jiabao Ma<span style="color: #94a3b8;">,</span> Shuhao Zhang<span style="color: #94a3b8;">,</span> Yuli Chen<span style="color: #94a3b8;">,</span> Changbao Li
+                    </div>
+                    <div style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 0.6rem;">
+                      31st International Conference on Computational Linguistics (COLING), pp. 7239-7252, 2025. <span style="font-weight: 600; color: #92400e;">(Outstanding Paper)</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                      <a href="https://aclanthology.org/2025.coling-main.483.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 12px; font-size: 0.75rem; font-weight: 600; color: #2563eb; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'" onmouseout="this.style.background='#eff6ff'; this.style.color='#2563eb'; this.style.borderColor='#bfdbfe'">
+                        <span>📄</span> PDF
                       </a>
-
-                      <div class="article-metadata" style="font-size: 0.8rem; color: #4a5568; line-height: 1.6;">
-                        <div style="margin-bottom: 0.2rem;">
-                          <span style="font-weight: 700; color: #2d3748; border-bottom: 1.5px solid #cbd5e0;">Zhixuan Wu</span>, <span>Bo Cheng†</span>, <span>Jiale Han, Jiabao Ma, Shuhao Zhang, Yuli Chen, Changbao Li</span>
-                        </div>
-                        <div style="color: #718096; font-style: italic; font-size: 0.85rem;">
-                          31st International Conference on Computational Linguistics (COLING), pp. 7239-7252, 2025.
-                        </div>
-                      </div>
-
-                      <div class="btn-links" style="margin-top: 0.8rem;">
-                        <a class="btn" href="https://aclanthology.org/2025.coling-main.483.pdf" target="_blank" rel="noopener" style="
-                          display: inline-flex;
-                          align-items: center;
-                          padding: 4px 12px;
-                          font-size: 0.8rem;
-                          font-weight: 600;
-                          color: #3498db;
-                          border: 1px solid #3498db;
-                          border-radius: 4px;
-                          text-decoration: none;
-                          transition: all 0.2s;
-                        " onmouseover="this.style.background='#3498db'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#3498db'">
-                          <span style="margin-right: 4px;">📄</span> PDF
-                        </a>
-                      </div>
                     </div>
                   </div>
+                </div>
 
-                <!-- TIP 2024 -->
-                <div class="publications-list" style="max-width: 1100px;">
-                  
+
+                <!-- ===== TIP 2024 ===== -->
                   <div class="publication-item" style="
                     background: #ffffff;
-                    padding: 1.5rem;
-                    margin-bottom: 1.2rem;
-                    border-radius: 8px;
-                    border: 1px solid #edf2f7;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                    transition: all 0.3s ease;
+                    padding: 1.2rem 1.5rem;
+                    margin-bottom: 1rem;
+                    border-radius: 12px;
+                    border: 1px solid #e2e8f0;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                    transition: all 0.25s ease;
                     display: flex;
-                    gap: 20px;
-                  ">
+                    gap: 16px;
+                    align-items: flex-start;
+                  " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
                     
-                    <div style="flex-shrink: 0; width: 100px;">
-                      <span style="
-                        display: inline-block;
-                        width: 100%;
-                        padding: 4px 0;
-                        background: linear-gradient(to right, #03284e, #094678);
-                        color: white;
-                        border-radius: 4px;
-                        font-weight: 700;
-                        font-size: 0.8rem;
-                        text-align: center;
-                        border: 1px solid #e2e8f0;
-                        text-transform: uppercase;
-                      ">TIP</span>
+                    <div style="flex-shrink: 0; width: 122px; padding-top: 2px;">
+                      <span style="display: inline-block; padding: 3px 26px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; white-space: nowrap;">TIP 2024</span>
                     </div>
+                    
 
-                    <div style="flex-grow: 1;">
-                      <a href="https://ieeexplore.ieee.org/abstract/document/10517892/" target="_blank" rel="noopener" style="
-                        text-decoration: none; 
-                        color: #2d3748; 
-                        font-size: 1.1rem;
-                        font-weight: 700; 
-                        line-height: 1.4;
-                        display: block; 
-                        margin-bottom: 0.5rem;
-                        transition: color 0.2s;
-                      " onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='#2d3748'">
+                    <div style="flex-grow: 1; min-width: 0;">
+                      <a href="https://ieeexplore.ieee.org/abstract/document/10517892/" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 1rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.4rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
                         Multi-View Time-Series Hypergraph Neural Network for Action Recognition
                       </a>
-
-                      <div class="article-metadata" style="font-size: 0.8rem; color: #4a5568; line-height: 1.6;">
-                        <div style="margin-bottom: 0.2rem;">
-                          <span>Nan Ma</span>, 
-                          <span style="font-weight: 700; color: #2d3748; border-bottom: 1.5px solid #cbd5e0;">Zhixuan Wu</span>, 
-                          <span>Yifan Feng, Cheng Wang, Yue Gao†</span>
-                        </div>
-                        <div style="color: #718096; font-style: italic; font-size: 0.85rem;">
-                          IEEE Transactions on Image Processing, vol. 33, pp. 3301-3313, 2024.
-                        </div>
+                      <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 0.3rem;">
+                        Nan Ma<span style="color: #94a3b8;">,</span> <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Yifan Feng<span style="color: #94a3b8;">,</span> Cheng Wang<span style="color: #94a3b8;">,</span> Yue Gao†
                       </div>
-
-                      <div class="btn-links" style="margin-top: 0.8rem;">
-                        <a class="btn" href="https://ieeexplore.ieee.org/abstract/document/10517892/" target="_blank" rel="noopener" style="
-                          display: inline-flex;
-                          align-items: center;
-                          padding: 4px 12px;
-                          font-size: 0.8rem;
-                          font-weight: 600;
-                          color: #3498db;
-                          border: 1px solid #3498db;
-                          border-radius: 4px;
-                          text-decoration: none;
-                          transition: all 0.2s;
-                        " onmouseover="this.style.background='#3498db'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#3498db'">
-                          <span style="margin-right: 4px;">📄</span> PDF
+                      <div style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 0.6rem;">
+                        IEEE Transactions on Image Processing, vol. 33, pp. 3301-3313, 2024.
+                      </div>
+                      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10517892/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 12px; font-size: 0.75rem; font-weight: 600; color: #2563eb; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'" onmouseout="this.style.background='#eff6ff'; this.style.color='#2563eb'; this.style.borderColor='#bfdbfe'">
+                          <span>📄</span> PDF
                         </a>
                       </div>
                     </div>
                   </div>
-
 
         
                 <!-- PR 2024 -->
-                <div class="publications-list" style="max-width: 1100px;">
+                 <div class="publication-item" style="
+                  background: #ffffff;
+                  padding: 1.2rem 1.5rem;
+                  margin-bottom: 1rem;
+                  border-radius: 12px;
+                  border: 1px solid #e2e8f0;
+                  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                  transition: all 0.25s ease;
+                  display: flex;
+                  gap: 16px;
+                  align-items: flex-start;
+                " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
                   
-                  <div class="publication-item" style="
-                    background: #ffffff;
-                    padding: 1.5rem;
-                    margin-bottom: 1.2rem;
-                    border-radius: 8px;
-                    border: 1px solid #edf2f7;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                    transition: all 0.3s ease;
-                    display: flex;
-                    gap: 20px;
-                  ">
-                    
-                    <div style="flex-shrink: 0; width: 100px;">
-                      <span style="
-                        display: inline-block;
-                        width: 100%;
-                        padding: 4px 0;
-                        background: linear-gradient(to right, #03284e, #094678);
-                        color: white;
-                        border-radius: 4px;
-                        font-weight: 700;
-                        font-size: 0.8rem;
-                        text-align: center;
-                        border: 1px solid #e2e8f0;
-                        text-transform: uppercase;
-                      ">PR</span>
+                  <div style="flex-shrink: 0; width: 122px; padding-top: 2px;">
+                    <span style="display: inline-block; padding: 3px 26px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; white-space: nowrap;">PR 2024</span>
+                  </div>
+
+                  <div style="flex-grow: 1; min-width: 0;">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S003132032400178X/pdfft?md5=ccae496d0bf0d2685352fc7f2b04678b&pid=1-s2.0-S003132032400178X-main.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 1rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.4rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
+                      Spatial-Temporal Hypergraph Based on Dual-Stage Attention Network for Multi-View Data Lightweight Action Recognition
+                    </a>
+                    <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 0.3rem;">
+                      <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Nan Ma†<span style="color: #94a3b8;">,</span> Cheng Wang<span style="color: #94a3b8;">,</span> Cheng Xu<span style="color: #94a3b8;">,</span> Genbao Xu<span style="color: #94a3b8;">,</span> Mingxing Li
                     </div>
-
-                    <div style="flex-grow: 1;">
-                      <a href="https://www.sciencedirect.com/science/article/pii/S003132032400178X/pdfft?md5=ccae496d0bf0d2685352fc7f2b04678b&pid=1-s2.0-S003132032400178X-main.pdf" target="_blank" rel="noopener" style="
-                        text-decoration: none; 
-                        color: #2d3748; 
-                        font-size: 1.1rem;
-                        font-weight: 700; 
-                        line-height: 1.4;
-                        display: block; 
-                        margin-bottom: 0.5rem;
-                        transition: color 0.2s;
-                      " onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='#2d3748'">
-                        Spatial-Temporal Hypergraph Based on Dual-Stage Attention Network for Multi-View Data Lightweight Action Recognition
+                    <div style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 0.6rem;">
+                      Pattern Recognition, vol. 151, pp. 110427, 2024.
+                    </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                      <a href="https://www.sciencedirect.com/science/article/pii/S003132032400178X/pdfft?md5=ccae496d0bf0d2685352fc7f2b04678b&pid=1-s2.0-S003132032400178X-main.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 12px; font-size: 0.75rem; font-weight: 600; color: #2563eb; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'" onmouseout="this.style.background='#eff6ff'; this.style.color='#2563eb'; this.style.borderColor='#bfdbfe'">
+                        <span>📄</span> PDF
                       </a>
-
-                      <div class="article-metadata" style="font-size: 0.8rem; color: #4a5568; line-height: 1.6;">
-                        <div style="margin-bottom: 0.2rem;">
-                          <span style="font-weight: 700; color: #2d3748; border-bottom: 1.5px solid #cbd5e0;">Zhixuan Wu</span>, <span>Nan Ma†</span>, <span>Cheng Wang, Cheng Xu, Genbao Xu, Mingxing Li</span>
-                        </div>
-                        <div style="color: #718096; font-style: italic; font-size: 0.85rem;">
-                          Pattern Recognition, vol. 151, pp. 110427, 2024.
-                        </div>
-                      </div>
-
-                      <div class="btn-links" style="margin-top: 0.8rem;">
-                        <a class="btn" href="https://www.sciencedirect.com/science/article/pii/S003132032400178X/pdfft?md5=ccae496d0bf0d2685352fc7f2b04678b&pid=1-s2.0-S003132032400178X-main.pdf" target="_blank" rel="noopener" style="
-                          display: inline-flex;
-                          align-items: center;
-                          padding: 4px 12px;
-                          font-size: 0.8rem;
-                          font-weight: 600;
-                          color: #3498db;
-                          border: 1px solid #3498db;
-                          border-radius: 4px;
-                          text-decoration: none;
-                          transition: all 0.2s;
-                        " onmouseover="this.style.background='#3498db'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#3498db'">
-                          <span style="margin-right: 4px;">📄</span> PDF
-                        </a>
-                      </div>
                     </div>
                   </div>
-                
+                </div>
                  
                   <!-- Research 2025 -->
-                  <div class="publications-list" style="max-width: 1100px;">
-                  
                   <div class="publication-item" style="
                     background: #ffffff;
-                    padding: 1.5rem;
-                    margin-bottom: 1.2rem;
-                    border-radius: 8px;
-                    border: 1px solid #edf2f7;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                    transition: all 0.3s ease;
+                    padding: 1.2rem 1.5rem;
+                    margin-bottom: 1rem;
+                    border-radius: 12px;
+                    border: 1px solid #e2e8f0;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                    transition: all 0.25s ease;
                     display: flex;
-                    gap: 20px;
-                  ">
+                    gap: 16px;
+                    align-items: flex-start;
+                  " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
                     
-                    <div style="flex-shrink: 0; width: 100px;">
-                      <span style="
-                        display: inline-block;
-                        width: 100%;
-                        padding: 4px 0;
-                        background: linear-gradient(to right, #03284e, #094678);
-                        color: white;
-                        border-radius: 4px;
-                        font-weight: 700;
-                        font-size: 0.8rem;
-                        text-align: center;
-                        border: 1px solid #e2e8f0;
-                        text-transform: uppercase;
-                      ">Research</span>
+                    <div style="flex-shrink: 0; width: 122px; padding-top: 2px;">
+                      <span style="display: inline-block; padding: 3px 18px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; white-space: nowrap;">Research</span>
                     </div>
 
-                    <div style="flex-grow: 1;">
-                      <a href="https://spj.science.org/doi/full/10.34133/research.0903" target="_blank" rel="noopener" style="
-                        text-decoration: none; 
-                        color: #2d3748; 
-                        font-size: 1.1rem;
-                        font-weight: 700; 
-                        line-height: 1.4;
-                        display: block; 
-                        margin-bottom: 0.5rem;
-                        transition: color 0.2s;
-                      " onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='#2d3748'">
+                    <div style="flex-grow: 1; min-width: 0;">
+                      <a href="https://spj.science.org/doi/full/10.34133/research.0903" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 1rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.4rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
                         Interactive Cognition of Self-driving: A Multi-dimensional Analysis Model and Implementation
                       </a>
-
-                      <div class="article-metadata" style="font-size: 0.8rem; color: #4a5568; line-height: 1.6;">
-                        <div style="margin-bottom: 0.2rem;">
-                          <span>Nan Ma†</span>, <span style="font-weight: 700; color: #2d3748; border-bottom: 1.5px solid #cbd5e0;">Zhixuan Wu</span>, <span>Kai Li, Genbao Xu, Qin Xia, and Cheng Xu</span>
-                        </div>
-                        <div style="color: #718096; font-style: italic; font-size: 0.85rem;">
-                          Research, vol.8, pp. 0903, 2025.
-                        </div>
+                      <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 0.3rem;">
+                        Nan Ma†<span style="color: #94a3b8;">,</span> <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Kai Li<span style="color: #94a3b8;">,</span> Genbao Xu<span style="color: #94a3b8;">,</span> Qin Xia<span style="color: #94a3b8;">,</span> Cheng Xu
                       </div>
-
-                      <div class="btn-links" style="margin-top: 0.8rem;">
-                        <a class="btn" href="https://spj.science.org/doi/full/10.34133/research.0903" target="_blank" rel="noopener" style="
-                          display: inline-flex;
-                          align-items: center;
-                          padding: 4px 12px;
-                          font-size: 0.8rem;
-                          font-weight: 600;
-                          color: #3498db;
-                          border: 1px solid #3498db;
-                          border-radius: 4px;
-                          text-decoration: none;
-                          transition: all 0.2s;
-                        " onmouseover="this.style.background='#3498db'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#3498db'">
-                          <span style="margin-right: 4px;">📄</span> PDF
+                      <div style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 0.6rem;">
+                        Research, vol. 8, pp. 0903, 2025.
+                      </div>
+                      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <a href="https://spj.science.org/doi/full/10.34133/research.0903" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 12px; font-size: 0.75rem; font-weight: 600; color: #2563eb; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'" onmouseout="this.style.background='#eff6ff'; this.style.color='#2563eb'; this.style.borderColor='#bfdbfe'">
+                          <span>📄</span> PDF
                         </a>
                       </div>
                     </div>
                   </div>
 
-                <!-- IJPRAI 2022
-                 <div class="publications-list" style="max-width: 1100px;">
+                <!-- ===== Tsinghua ST 2022 ===== -->
+                <div class="publication-item" style="
+                  background: #ffffff;
+                  padding: 1.2rem 1.5rem;
+                  margin-bottom: 1rem;
+                  border-radius: 12px;
+                  border: 1px solid #e2e8f0;
+                  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                  transition: all 0.25s ease;
+                  display: flex;
+                  gap: 16px;
+                  align-items: flex-start;
+                " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
                   
-                  <div class="publication-item" style="
-                    background: #ffffff;
-                    padding: 1.5rem;
-                    margin-bottom: 1.2rem;
-                    border-radius: 8px;
-                    border: 1px solid #edf2f7;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                    transition: all 0.3s ease;
-                    display: flex;
-                    gap: 20px;
-                  ">
-                    
-                    <div style="flex-shrink: 0; width: 100px;">
-                      <span style="
-                        display: inline-block;
-                        width: 100%;
-                        padding: 4px 0;
-                        background: linear-gradient(to right, #03284e, #094678);
-                        color: white;
-                        border-radius: 4px;
-                        font-weight: 700;
-                        font-size: 0.8rem;
-                        text-align: center;
-                        border: 1px solid #e2e8f0;
-                        text-transform: uppercase;
-                      ">IJPRAI</span>
-                    </div>
+                  <div style="flex-shrink: 0; width: 122px; padding-top: 2px;">
+                    <span style="display: inline-block; padding: 3px 9px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; white-space: nowrap; text-align: center;">Tsinghua ST</span>
+                  </div>
 
-                    <div style="flex-grow: 1;">
-                      <a href="https://www.worldscientific.com/doi/abs/10.1142/S0218001422560018" target="_blank" rel="noopener" style="
-                        text-decoration: none; 
-                        color: #2d3748; 
-                        font-size: 1.1rem;
-                        font-weight: 700; 
-                        line-height: 1.4;
-                        display: block; 
-                        margin-bottom: 0.5rem;
-                        transition: color 0.2s;
-                      " onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='#2d3748'">
-                        Attention Mechanism Based on Improved Spatial-Temporal Convolutional Neural Networks for Traffic Police Gesture Recognition
+                  <div style="flex-grow: 1; min-width: 0;">
+                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9802874" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 1rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.4rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
+                      A Survey of Human Action Recognition and Posture Prediction
+                    </a>
+                    <div style="font-size: 0.82rem; color: #475569; line-height: 1.5; margin-bottom: 0.3rem;">
+                      Nan Ma†<span style="color: #94a3b8;">,</span> <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Yiu-ming Cheung<span style="color: #94a3b8;">,</span> Yuchen Guo<span style="color: #94a3b8;">,</span> Yue Gao<span style="color: #94a3b8;">,</span> Jiahong Li<span style="color: #94a3b8;">,</span> Beijyan Jiang
+                    </div>
+                    <div style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 0.6rem;">
+                      Tsinghua Science and Technology, vol. 27, no. 6, pp. 973-1001, 2022.
+                    </div>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                      <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9802874" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 12px; font-size: 0.75rem; font-weight: 600; color: #2563eb; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#2563eb'; this.style.color='#ffffff'; this.style.borderColor='#2563eb'" onmouseout="this.style.background='#eff6ff'; this.style.color='#2563eb'; this.style.borderColor='#bfdbfe'">
+                        <span>📄</span> PDF
                       </a>
-
-                      <div class="article-metadata" style="font-size: 0.8rem; color: #4a5568; line-height: 1.6;">
-                        <div style="margin-bottom: 0.2rem;">
-                          <span style="font-weight: 700; color: #2d3748; border-bottom: 1.5px solid #cbd5e0;">Zhixuan Wu</span>, <span>Nan Ma*</span>, <span>Yue Gao, Jiahong Li, Xinkai Xu, Yongqiang Yao, Li Chen</span>
-                        </div>
-                        <div style="color: #718096; font-style: italic; font-size: 0.85rem;">
-                          International Journal of Pattern Recognition and Artificial Intelligence, vol. 36, no. 8, pp. 2256001:1-2256001:19, 2022.
-                        </div>
-                      </div>
-
-                      <div class="btn-links" style="margin-top: 0.8rem;">
-                        <a class="btn" href="https://www.worldscientific.com/doi/abs/10.1142/S0218001422560018" target="_blank" rel="noopener" style="
-                          display: inline-flex;
-                          align-items: center;
-                          padding: 4px 12px;
-                          font-size: 0.8rem;
-                          font-weight: 600;
-                          color: #3498db;
-                          border: 1px solid #3498db;
-                          border-radius: 4px;
-                          text-decoration: none;
-                          transition: all 0.2s;
-                        " onmouseover="this.style.background='#3498db'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#3498db'">
-                          <span style="margin-right: 4px;">📄</span> PDF
-                        </a>
-                      </div>
-                    </div>
-                  </div> -->
-        
-                <!-- Tsinghua ST 2022 -->
-                 <div class="publications-list" style="max-width: 1100px;">
-                  
-                  <div class="publication-item" style="
-                    background: #ffffff;
-                    padding: 1.5rem;
-                    margin-bottom: 1.2rem;
-                    border-radius: 8px;
-                    border: 1px solid #edf2f7;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                    transition: all 0.3s ease;
-                    display: flex;
-                    gap: 20px;
-                  ">
-                    
-                    <div style="flex-shrink: 0; width: 100px;">
-                      <span style="
-                        display: inline-block;
-                        width: 100%;
-                        padding: 4px 0;
-                        background: linear-gradient(to right, #03284e, #094678);
-                        color: white;
-                        border-radius: 4px;
-                        font-weight: 700;
-                        font-size: 0.5rem;
-                        text-align: center;
-                        border: 1px solid #e2e8f0;
-                        text-transform: uppercase;
-                      ">TSINGHUA SCI TECHNOL</span>
-                    </div>
-
-                    <div style="flex-grow: 1;">
-                      <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9802874" target="_blank" rel="noopener" style="
-                        text-decoration: none; 
-                        color: #2d3748; 
-                        font-size: 1.1rem;
-                        font-weight: 700; 
-                        line-height: 1.4;
-                        display: block; 
-                        margin-bottom: 0.5rem;
-                        transition: color 0.2s;
-                      " onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='#2d3748'">
-                        A Survey of Human Action Recognition and Posture Prediction
-                      </a>
-
-                      <div class="article-metadata" style="font-size: 0.8rem; color: #4a5568; line-height: 1.6;">
-                        <div style="margin-bottom: 0.2rem;">
-                          <span>Nan Ma†</span>, <span style="font-weight: 700; color: #2d3748; border-bottom: 1.5px solid #cbd5e0;">Zhixuan Wu</span>, <span>Yiu-ming Cheung, Yuchen Guo, Yue Gao, Jiahong Li, Beijyan Jiang</span>
-                        </div>
-                        <div style="color: #718096; font-style: italic; font-size: 0.85rem;">
-                          Tsinghua Science and Technology, vol. 27, no. 6, pp. 973-1001, 2022.
-                        </div>
-                      </div>
-
-                      <div class="btn-links" style="margin-top: 0.8rem;">
-                        <a class="btn" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9802874" target="_blank" rel="noopener" style="
-                          display: inline-flex;
-                          align-items: center;
-                          padding: 4px 12px;
-                          font-size: 0.8rem;
-                          font-weight: 600;
-                          color: #3498db;
-                          border: 1px solid #3498db;
-                          border-radius: 4px;
-                          text-decoration: none;
-                          transition: all 0.2s;
-                        " onmouseover="this.style.background='#3498db'; this.style.color='#fff'" onmouseout="this.style.background='transparent'; this.style.color='#3498db'">
-                          <span style="margin-right: 4px;">📄</span> PDF
-                        </a>
-                      </div>
                     </div>
                   </div>
+                </div>
 
               
            <!-- Co-authored Publications -->
 
-            <div style="margin: 4rem 0 2rem 0; border-top: 1px solid #eee; padding-top: 1.5rem;">
-              <h2 style="font-weight: 600; color: #626565; font-size: 1.4rem; margin-bottom: 1.5rem;">
+            <div style="margin: 2.5rem 0 1.5rem 0; border-top: 1px solid #e2e8f0; padding-top: 2rem;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.2rem;">
+              <h2 style="font-weight: 600; color: #0f172a; font-size: 1.2rem; letter-spacing: -0.02em; margin: 0;">
                 Co-authored Publications
               </h2>
             </div>
+            <div style="width: 32px; height: 2px; background: #94a3b8; border-radius: 2px;"></div>
+          </div>
 
-            <!-- Engineering 2025 -->
-             <div class="view-list view-list-item" style="margin-bottom: 1.2rem; display: flex; opacity: 0.9;">
-              <div style="flex-shrink: 0; margin-right: 15px;">
-                  <span style="background: #f8f9fa; padding: 1px 4px; border-radius: 4px; font-weight: 500; color: #310de5; font-size: 0.7em; display: inline-block; width: 100px; text-align: center; border: 1px solid #0507ae;">
-                      Engineering
-                  </span>
+          <!-- ===== Engineering 2025 (Co-authored) ===== -->
+            <div class="publication-item" style="
+              background: #ffffff;
+              padding: 1rem 1.5rem;
+              margin-bottom: 0.8rem;
+              border-radius: 12px;
+              border: 1px solid #e2e8f0;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+              transition: all 0.25s ease;
+              display: flex;
+              gap: 16px;
+              align-items: flex-start;
+            " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
+              
+              <div style="flex-shrink: 0; width: 122px; padding-top: 2px; display: flex; justify-content: center;">
+                <span style="display: inline-block; padding: 3px 8px; font-size: 0.5rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; text-align: center; width: 100%;">
+                  Engineering
+                </span>
               </div>
-              <div style="flex-grow: 1;">
-                <div style="font-size: 0.95em;">
-                  <a href="https://www.sciencedirect.com/science/article/pii/S2095809925007441" target="_blank" style="text-decoration: none; color: #444; font-weight: 600; display: block; margin-bottom: 0.1rem;">
-                    Embodied Interactive Intelligence Towards Autonomous Driving
-                  </a>
-                  <div style="color: #6c757d; font-size: 0.88em; line-height: 1.4;">
-                    <span>Nan Ma†</span>, <span>Jia Pan, Yongjin Liu, Yajue Yang, Yiheng Han, Jiacheng Guo</span>, <span style="font-weight: 600;">Zhixuan Wu</span>, <span>Zecheng Yang, Zhiwei Yang, Deyi Li†</span> <br>
-                    <i>Engineering</i>, vol. 59, pp. 337-351, 2025.
-                  </div>
+
+              <div style="flex-grow: 1; min-width: 0;">
+                <a href="https://www.sciencedirect.com/science/article/pii/S2095809925007441" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 0.95rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.3rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
+                  Embodied Interactive Intelligence Towards Autonomous Driving
+                </a>
+                <div style="font-size: 0.8rem; color: #475569; line-height: 1.5; margin-bottom: 0.2rem;">
+                  Nan Ma†<span style="color: #94a3b8;">,</span> Jia Pan<span style="color: #94a3b8;">,</span> Yongjin Liu<span style="color: #94a3b8;">,</span> Yajue Yang<span style="color: #94a3b8;">,</span> Yiheng Han<span style="color: #94a3b8;">,</span> Jiacheng Guo<span style="color: #94a3b8;">,</span> <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Zecheng Yang<span style="color: #94a3b8;">,</span> Zhiwei Yang<span style="color: #94a3b8;">,</span> Deyi Li†
+                </div>
+                <div style="font-size: 0.78rem; color: #64748b; font-style: italic;">
+                  Engineering, vol. 59, pp. 337-351, 2025.
                 </div>
               </div>
-            </div>
+            </div>  
+          
 
-            <!-- Sci. China Inf. Sci. 2021 -->
-             <div class="view-list view-list-item" style="margin-bottom: 1.2rem; display: flex; opacity: 0.9;">
-              <div style="flex-shrink: 0; margin-right: 15px;">
-                  <span style="background: #f8f9fa; padding: 1px 4px; border-radius: 4px; font-weight: 500; color: #310de5; font-size: 0.5em; display: inline-block; width: 100px; text-align: center; border: 1px solid #0507ae;">
-                      Sci. China Inf. Sci.
+            <!-- ===== Sci. China Inf. Sci. 2021 (Co-authored) ===== -->
+              <div class="publication-item" style="
+                background: #ffffff;
+                padding: 1rem 1.5rem;
+                margin-bottom: 0.8rem;
+                border-radius: 12px;
+                border: 1px solid #e2e8f0;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                transition: all 0.25s ease;
+                display: flex;
+                gap: 16px;
+                align-items: flex-start;
+              " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
+                
+                <div style="flex-shrink: 0; width: 122px; padding-top: 2px; display: flex; justify-content: center;">
+                  <span style="display: inline-block; padding: 3px 8px; font-size: 0.5rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; text-align: center; width: 100%; line-height: 1.2;">
+                    Sci. China<br>Inf. Sci.
                   </span>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="font-size: 0.95em;">
-                  <a href="http://scis.scichina.com/en/2021/156101-supplementary.pdf" target="_blank" style="text-decoration: none; color: #444; font-weight: 600; display: block; margin-bottom: 0.1rem;">
+                </div>
+
+                <div style="flex-grow: 1; min-width: 0;">
+                  <a href="http://scis.scichina.com/en/2021/156101-supplementary.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 0.95rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.3rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
                     Future vehicles: interactive wheeled robots
                   </a>
-                  <div style="color: #6c757d; font-size: 0.88em; line-height: 1.4;">
-                    <span>Nan Ma</span>, <span>Deyi Li†</span>, <span>Wen He</span>, <span>Yue Deng</span>, <span>Jiahong Li</span>, 
-                    <span>Yue Gao</span>, <span>Hong Bao</span>, <span>Huan Zhang</span>, <span>Xinkai Xu</span>, 
-                    <span>Yuansheng Liu</span>, <span style="font-weight: 600;">Zhixuan Wu</span>, <span>Li Chen</span> <br>
-                    <i>Science China Information Sciences</i>, vol. 64, pp. 1-3, 2021.
+                  <div style="font-size: 0.8rem; color: #475569; line-height: 1.5; margin-bottom: 0.2rem;">
+                    Nan Ma<span style="color: #94a3b8;">,</span> Deyi Li†<span style="color: #94a3b8;">,</span> Wen He<span style="color: #94a3b8;">,</span> Yue Deng<span style="color: #94a3b8;">,</span> Jiahong Li<span style="color: #94a3b8;">,</span> Yue Gao<span style="color: #94a3b8;">,</span> Hong Bao<span style="color: #94a3b8;">,</span> Huan Zhang<span style="color: #94a3b8;">,</span> Xinkai Xu<span style="color: #94a3b8;">,</span> Yuansheng Liu<span style="color: #94a3b8;">,</span> <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Li Chen
+                  </div>
+                  <div style="font-size: 0.78rem; color: #64748b; font-style: italic;">
+                    Science China Information Sciences, vol. 64, pp. 1-3, 2021.
                   </div>
                 </div>
               </div>
-            </div>
-               
-            <!-- AAAI 2026 -->
-             <div class="view-list view-list-item" style="margin-bottom: 1.2rem; display: flex; opacity: 0.9;">
-              <div style="flex-shrink: 0; margin-right: 15px;">
-                  <span style="background: #f8f9fa; padding: 1px 4px; border-radius: 4px; font-weight: 500; color: #8f0de5; font-size: 0.7em; display: inline-block; width: 100px; text-align: center; border: 1px solid #530499;">
-                      AAAI
+
+            <!-- ===== AAAI 2026 (Co-authored) ===== -->
+              <div class="publication-item" style="
+                background: #ffffff;
+                padding: 1rem 1.5rem;
+                margin-bottom: 0.8rem;
+                border-radius: 12px;
+                border: 1px solid #e2e8f0;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                transition: all 0.25s ease;
+                display: flex;
+                gap: 16px;
+                align-items: flex-start;
+              " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
+                
+                <div style="flex-shrink: 0; width: 122px; padding-top: 2px; display: flex; justify-content: center;">
+                  <span style="display: inline-block; padding: 3px 8px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; text-align: center; width: 100%;">
+                    AAAI 2026
                   </span>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="font-size: 0.95em;">
-                  <a href="https://ojs.aaai.org/index.php/AAAI/article/download/40340/44301" target="_blank" style="text-decoration: none; color: #444; font-weight: 600; display: block; margin-bottom: 0.1rem;">
+                </div>
+
+                <div style="flex-grow: 1; min-width: 0;">
+                  <a href="https://ojs.aaai.org/index.php/AAAI/article/download/40340/44301" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 0.95rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.3rem; transition: color 0.2s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#0f172a'">
                     Analyze–Compose–Execute: A Dynamic Dialogue Framework for Multi-Agent Debate
                   </a>
-                  <div style="color: #6c757d; font-size: 0.88em; line-height: 1.4;">
-                    <span>Wenyuan Gu, Haowen Wang, Jiale Han, Han J, Xiang Li</span>, <span style="font-weight: 600;">Zhixuan Wu</span>, <span>Hongru Xiao, Bo Cheng†</span> <br>
-                    <i>Proceedings of the AAAI Conference on Artificial Intelligence</i>, vol. 40, no. 36, pp. 30825-30833, 2026.
+                  <div style="font-size: 0.8rem; color: #475569; line-height: 1.5; margin-bottom: 0.2rem;">
+                    Wenyuan Gu<span style="color: #94a3b8;">,</span> Haowen Wang<span style="color: #94a3b8;">,</span> Jiale Han<span style="color: #94a3b8;">,</span> Han J<span style="color: #94a3b8;">,</span> Xiang Li<span style="color: #94a3b8;">,</span> <span style="font-weight: 700; color: #0f172a; border-bottom: 1.5px solid #bfdbfe;">Zhixuan Wu</span><span style="color: #94a3b8;">,</span> Hongru Xiao<span style="color: #94a3b8;">,</span> Bo Cheng†
+                  </div>
+                  <div style="font-size: 0.78rem; color: #64748b; font-style: italic;">
+                    Proceedings of the AAAI Conference on Artificial Intelligence, vol. 40, no. 36, pp. 30825-30833, 2026.
                   </div>
                 </div>
               </div>
+
+            <!-- ===== ⏳ Ongoing Research ===== -->
+            <div style="margin: 2.5rem 0 1.5rem 0; border-top: 1px solid #e2e8f0; padding-top: 2rem;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.2rem;">
+                <h2 style="font-weight: 600; color: #0f172a; font-size: 1.2rem; letter-spacing: -0.02em; margin: 0;">
+                  Ongoing Research
+                </h2>
+              </div>
+              <div style="width: 32px; height: 2px; background: #f59e0b; border-radius: 2px;"></div>
             </div>
-                
-      
+
+            <!-- ===== Ongoing Research 条目 1 ===== -->
+            <div class="publication-item" style="
+              background: #ffffff;
+              padding: 1rem 1.5rem;
+              margin-bottom: 0.8rem;
+              border-radius: 12px;
+              border: 1px solid #e2e8f0;
+              border-left: 4px solid #f59e0b;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+              transition: all 0.25s ease;
+              display: flex;
+              gap: 16px;
+              align-items: flex-start;
+            " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#f59e0b'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
+              
+              <div style="flex-shrink: 0; width: 122px; padding-top: 2px; display: flex; justify-content: center;">
+                <span style="display: inline-block; padding: 3px 8px; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-align: center; width: 100%;">
+                  In Progress
+                </span>
+              </div>
+
+              <div style="flex-grow: 1; min-width: 0;">
+                <a href="" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 0.95rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.3rem; transition: color 0.2s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#0f172a'">
+                  MViD: Multi-Depth Visual-Conditioned Diffusion for Video Question Answering
+                </a>
+                <div style="font-size: 0.78rem; color: #94a3b8;">
+                  
+                </div>
+              </div>
             </div>
+
+            <!-- ===== Ongoing Research 条目 2 ===== -->
+            <div class="publication-item" style="
+              background: #ffffff;
+              padding: 1rem 1.5rem;
+              margin-bottom: 0.8rem;
+              border-radius: 12px;
+              border: 1px solid #e2e8f0;
+              border-left: 4px solid #10b981;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+              transition: all 0.25s ease;
+              display: flex;
+              gap: 16px;
+              align-items: flex-start;
+            " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#10b981'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
+              
+              <div style="flex-shrink: 0; width: 122px; padding-top: 2px; display: flex; justify-content: center;">
+                <span style="display: inline-block; padding: 3px 8px; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.04em; border-radius: 20px; text-transform: uppercase; background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; text-align: center; width: 100%;">
+                  Under Review
+                </span>
+              </div>
+
+              <div style="flex-grow: 1; min-width: 0;">
+                <a href="" target="_blank" rel="noopener" style="text-decoration: none; color: #0f172a; font-size: 0.95rem; font-weight: 600; line-height: 1.4; display: block; margin-bottom: 0.3rem; transition: color 0.2s;" onmouseover="this.style.color='#10b981'" onmouseout="this.style.color='#0f172a'">
+                  Learning to Reason Before Masking for Referring Audio-Visual Segmentation
+                </a>
+                <div style="font-size: 0.78rem; color: #94a3b8; font-style: italic;">
+                  
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -1047,230 +1073,119 @@
          <section id="services" class="home-section wg-pages">
           <div class="home-section-bg"></div>
           <div class="container" style="padding-left: 1rem; padding-right: 1rem;">
+              <!-- 标题 -->
+              <div class="section-heading mb-4" style="text-align: left; padding-left: 0;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                  <span style="font-size: 1.5rem;">📋</span>
+                  <h1 style="font-weight: 700; color: #0f172a; font-size: 1.6rem; letter-spacing: -0.02em; margin: 0;">
+                    Academic Services
+                  </h1>
+                </div>
+                <div style="width: 40px; height: 3px; background: #2563eb; border-radius: 2px;"></div>
+              </div>
 
-            <!-- 标题 -->
-            <div class="section-heading mb-4" style="text-align: left;">
-              <h1 class="mb-0" style="font-weight: 700; color: #2c3e50; font-size: 1.8rem;">Academic Services</h1>
-              <hr style="border: 0; height: 1px; background-color: #e0e0e0; margin-top: 0.5rem; margin-bottom: 1.5rem;">
-            </div>
+              <!-- 服务卡片容器 -->
+              <div style="
+                background: #ffffff;
+                border-radius: 12px;
+                border: 1px solid #e2e8f0;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+                padding: 1.5rem 1.8rem;
+                transition: all 0.25s ease;
+              " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#b3d0ff'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
 
-            <!-- Conference Program Committee -->
-            <div class="academic-item mb-3" style="text-align: left;">
-              <h3 style="margin-bottom: 0.25rem; font-weight: 600; color: #090909; font-size: 1rem;">Conference Program Committee</h3>
-              <p style="margin: 0; line-height: 1.6; color: #424242; font-size: 0.95rem;">
-                ICML 2026, AAAI 2025
-              </p>
-            </div>
+                <!-- Conference Program Committee -->
+                <div style="display: flex; gap: 16px; align-items: flex-start; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #f1f5f9;">
+                  <div style="flex-grow: 1; min-width: 0;">
+                    <h3 style="font-weight: 600; color: #0f172a; font-size: 0.95rem; margin: 0 0 0.3rem 0;">
+                      Conference Program Committee
+                    </h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                      <span style="display: inline-block; padding: 2px 14px; font-size: 0.75rem; font-weight: 500; color: #4338ca; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 20px;">ICML 2026</span>
+                      <span style="display: inline-block; padding: 2px 14px; font-size: 0.75rem; font-weight: 500; color: #6d28d9; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 20px;">AAAI 2025</span>
+                    </div>
+                  </div>
+                </div>
 
-            <!-- Journal Reviewer -->
-            <div class="academic-item mb-3" style="text-align: left;">
-              <h3 style="margin-bottom: 0.25rem; font-weight: 600; color: #090909; font-size: 1rem;">Journal Reviewer</h3>
-              <p style="margin: 0; line-height: 1.6; color: #424242; font-size: 0.95rem;">
-                International Journal of Computer Vision; Neurocomputing; IEEE Transactions on Emerging Topics in Computational Intelligence; Signal Processing: Image Communication
-              </p>
+                <!-- Journal Reviewer -->
+                  <div style="flex-grow: 1; min-width: 0;">
+                    <h3 style="font-weight: 600; color: #0f172a; font-size: 0.95rem; margin: 0 0 0.3rem 0;">
+                      Journal Reviewer
+                    </h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                      <span style="display: inline-block; padding: 2px 14px; font-size: 0.7rem; font-weight: 500; color: #1e40af; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 20px;">IJCV</span>
+                      <span style="display: inline-block; padding: 2px 14px; font-size: 0.7rem; font-weight: 500; color: #1e40af; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 20px;">Neurocomputing</span>
+                      <span style="display: inline-block; padding: 2px 14px; font-size: 0.7rem; font-weight: 500; color: #1e40af; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 20px;">IEEE TETCI</span>
+                      <span style="display: inline-block; padding: 2px 14px; font-size: 0.7rem; font-weight: 500; color: #1e40af; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 20px;">Signal Processing: Image Comm.</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
+          </section>
+  
+    <!-- ===== Honors & Awards ===== -->
+      <section id="awards" class="home-section wg-pages" style="padding: 3rem 0; background-color: #fafbfc; border-top: 1px solid #e2e8f0;">
+        <div class="container" style="padding-left: 1rem; padding-right: 1rem;">
+
+          <!-- 标题 -->
+          <div class="section-heading mb-4" style="text-align: left; padding-left: 0;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+              <span style="font-size: 1.5rem;">🏆</span>
+              <h1 style="font-weight: 700; color: #0f172a; font-size: 1.6rem; letter-spacing: -0.02em; margin: 0;">
+                Honors & Awards
+              </h1>
+            </div>
+            <div style="width: 40px; height: 3px; background: #f59e0b; border-radius: 2px;"></div>
+          </div>
+
+          <!-- 奖项卡片容器 -->
+          <div style="
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            padding: 1.5rem 1.8rem;
+            transition: all 0.25s ease;
+          " onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'; this.style.borderColor='#fcd34d'" onmouseout="this.style.boxShadow='0 1px 3px rgba(0,0,0,0.04)'; this.style.borderColor='#e2e8f0'">
+
+            <!-- 奖项列表 - 时间线风格 -->
+            <div style="position: relative; padding-left: 24px;">
+              <!-- 时间线竖线 -->
+              <div style="position: absolute; left: 4px; top: 6px; bottom: 4px; width: 2px; background: linear-gradient(to bottom, #f59e0b, #fcd34d, #fef3c7); border-radius: 2px;"></div>
+
+              <!-- 奖项 1 -->
+              <div style="position: relative; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #f8fafc;">
+                <div style="position: absolute; left: -18px; top: 6px; width: 12px; height: 12px; background: #f59e0b; border: 2px solid #fde68a; border-radius: 50%; box-shadow: 0 0 0 3px #fffbeb;"></div>
+                <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px;">
+                  <span style="font-weight: 700; color: #0f172a; font-size: 0.9rem;">Outstanding Paper Award</span>
+                  <span style="color: #94a3b8; font-size: 0.7rem;">·</span>
+                  <span style="font-weight: 500; color: #6d28d9; font-size: 0.8rem; background: #f5f3ff; padding: 0px 10px; border-radius: 12px; border: 1px solid #ddd6fe;">COLING 2025</span>
+                </div>
+                <div style="font-size: 0.82rem; color: #64748b; margin-top: 2px; padding-left: 2px;">
+                  VideoQA-TA: Temporal-Aware Multi-Modal Video Question Answering
+                </div>
+              </div>
+
+              <!-- 奖项 2 -->
+              <div style="position: relative; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #f8fafc;">
+                <div style="position: absolute; left: -18px; top: 6px; width: 12px; height: 12px; background: #f59e0b; border: 2px solid #fde68a; border-radius: 50%; box-shadow: 0 0 0 3px #eff6ff;"></div>
+                <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px;">
+                  <span style="font-weight: 700; color: #0f172a; font-size: 0.9rem;">Excellent Master’s Dissertation Nomination Award</span>
+                  <span style="color: #94a3b8; font-size: 0.7rem;">·</span>
+                  <span style="font-weight: 500; color: #1e40af; font-size: 0.8rem; background: #eff6ff; padding: 0px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">Aug 2023</span>
+                </div>
+                <div style="font-size: 0.82rem; color: #64748b; margin-top: 2px; padding-left: 2px;">
+                  Awarded by Beijing Society of Image and Graphics
+                </div>
+              </div>
 
           </div>
-        </section>
 
-
-
-
-
-
-    <!--  <section id="research" class="home-section wg-portfolio  "  >-->
-    <!--   <div class="home-section-bg " >-->
-    <!--     -->
-    <!--   </div>-->
-    <!--    <div class="container">-->
-
-    <!--      <div class="row  ">-->
-    <!--        -->
-    <!--          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">-->
-    <!--            <h1 class="mb-0">Research</h1>-->
-    <!--            -->
-    <!--          </div>-->
-
-    <!--<div class="col-12 col-lg-8">-->
-
-    <!--    <span class="d-none default-project-filter">*</span>-->
-    <!--    -->
-    <!--    <div class="project-toolbar">-->
-    <!--      <div class="project-filters">-->
-    <!--        <div class="btn-toolbar ">-->
-    <!--          <div class="btn-group flex-wrap">-->
-    <!--              <a href="#" data-filter="*" class="btn btn-primary btn-lg active">All</a>-->
-    <!--              <a href="#" data-filter=".js-id-optimal-control" class="btn btn-primary btn-lg">Optimal Control</a>-->
-    <!--              <a href="#" data-filter=".js-id-reinforcement-learning" class="btn btn-primary btn-lg">Reinforcement Learning</a>-->
-    <!--              <a href="#" data-filter=".js-id-legged-robot" class="btn btn-primary btn-lg">Legged Robot</a>-->
-    <!--              <a href="#" data-filter=".js-id-demo" class="btn btn-primary btn-lg">Other</a>-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
-
-    <!--  <div class="isotope projects-container row js-layout-row ">-->
-
-    <!--          <div class="col-12 isotope-item js-id-optimal-control js-id-quadruped-robot js-id-reinforcement-learning js-id-bipedal-robot">-->
-    <!--        -->
-    <!--<div class="col-lg-12 mb-5 view-showcase">-->
-    <!--  <div class="row align-items-center">-->
-    <!--    <div class="col-12 col-md-6">-->
-    <!--      <div class="section-subheading article-title mb-0 mt-0"><a href="/research/quadruped_two_leg_walking/" >Quadruped robot walking like lizard with two point feet</a></div>-->
-
-    <!--      <div class="article-style">-->
-    <!--        A research topic focus on using optimization approaches to give quadruped robot two point feet walking ability.-->
-    <!--      </div>-->
-
-    <!--      <div class="btn-links">-->
-    <!--        -->
-    <!--  <a class="btn btn-outline-primary btn-page-header" href="https://www.zhihu.com/people/yuexiaozhu" target="_blank" rel="noopener">-->
-    <!--    <i class="fab fa-zhihu mr-1"></i>Follow</a>-->
-
-    <!--      </div>-->
-
-    <!--    </div>-->
-    <!--    <div class="col-12 col-md-6 order-first ">-->
-    <!--        <a href="/research/quadruped_two_leg_walking/" >-->
-    <!--          <img src="/research/quadruped_two_leg_walking/featured_hu662ea52dbf45263bba1eb5c07304d0d9_743643_540x0_resize_q75_h2_lanczos_3.webp" height="248" width="540"-->
-    <!--              alt="Quadruped robot walking like lizard with two point feet" loading="lazy">-->
-    <!--        </a>-->
-    <!--      -->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</div>-->
-
-    <!--      </div>-->
-    <!--    -->
-    <!--          <div class="col-12 isotope-item js-id-optimal-control js-id-quadruped-robot js-id-reinforcement-learning js-id-bipedal-robot">-->
-
-
-    <!--<div class="col-lg-12 mb-5 view-showcase">-->
-    <!--  <div class="row align-items-center">-->
-    <!--    <div class="col-12 col-md-6">-->
-    <!--      <div class="section-subheading article-title mb-0 mt-0"><a href="/research/offline_quadruped_jumping/" >Quadruped jumping with optimal control</a></div>-->
-    <!--      -->
-    <!--      <div class="article-style">-->
-    <!--        A research topic focus on using optimization approaches to give legged robot jumping ability.-->
-    <!--      </div>-->
-
-    <!--      <div class="btn-links">-->
-    <!--<a class="btn btn-outline-primary btn-page-header" href="https://www.youtube.com/playlist?list=PLKHWv6i0gB-9KobcKvvrprYk5VArDbhFk" target="_blank" rel="noopener">-->
-    <!--  Video-->
-    <!--</a>-->
-
-    <!--  <a class="btn btn-outline-primary btn-page-header" href="https://www.zhihu.com/people/yuexiaozhu" target="_blank" rel="noopener">-->
-    <!--    <i class="fab fa-zhihu mr-1"></i>Follow</a>-->
-
-    <!--      </div>-->
-
-    <!--    </div>-->
-    <!--    <div class="col-12 col-md-6 order-first ">-->
-    <!--      -->
-    <!--        <a href="/research/offline_quadruped_jumping/" >-->
-    <!--          <img src="/research/offline_quadruped_jumping/featured_hu031f41de6e98c5f0a0a9564fdd879ecb_1098367_540x0_resize_q75_h2_lanczos_3.webp" height="271" width="540"-->
-    <!--              alt="Quadruped jumping with optimal control" loading="lazy">-->
-    <!--        </a>-->
-    <!--      -->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</div>-->
-
-    <!--      </div>-->
-    <!--    -->
-    <!--          <div class="col-12 isotope-item js-id-optimal-control js-id-trajectory-planning">-->
-
-    <!--<div class="col-lg-12 mb-5 view-showcase">-->
-    <!--  <div class="row align-items-center">-->
-    <!--    <div class="col-12 col-md-6">-->
-    <!--      <div class="section-subheading article-title mb-0 mt-0"><a href="/research/construction_robot/" >Painting Robot in construction industry (RA Work)</a></div>-->
-    <!--      -->
-    <!--      <div class="article-style">-->
-    <!--        A research topic focus on using mobile-based and 6 Dof manipulator to paint the indoor environment.-->
-    <!--      </div>-->
-
-    <!--      <div class="btn-links">-->
-    <!--        -->
-
-    <!--<a class="btn btn-outline-primary btn-page-header" href="https://www.researchgate.net/profile/Zhou-Yang-18/research" target="_blank" rel="noopener">-->
-    <!--  PDF-->
-    <!--</a>-->
-
-    <!--  <a class="btn btn-outline-primary btn-page-header" href="https://www.zhihu.com/people/yuexiaozhu" target="_blank" rel="noopener">-->
-    <!--    <i class="fab fa-zhihu mr-1"></i>Follow</a>-->
-
-    <!--      </div>-->
-
-    <!--    </div>-->
-    <!--    <div class="col-12 col-md-6 order-first ">-->
-    <!--      -->
-    <!--        <a href="/research/construction_robot/" >-->
-    <!--          <img src="/research/construction_robot/featured_hu75ea83f153be1e0c39c792f4b594fd5b_126483_540x0_resize_q75_h2_lanczos_3.webp" height="407" width="540"-->
-    <!--              alt="Painting Robot in construction industry (RA Work)" loading="lazy">-->
-    <!--        </a>-->
-    <!--      -->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</div>-->
-
-    <!--      </div>-->
-
-    <!--  </div>-->
-    <!--</div>-->
-    <!--    -->
-    <!--      </div>-->
-
-    <!--    </div>-->
-    <!--  </section>-->
-
-    
-          
-          
-<!--           -->
-
-  <!--  <div class="page-footer">-->
-  <!--    -->
-  <!--    -->
-  <!--    <div class="container">-->
-  <!--      <footer class="site-footer">-->
-
-  <!--  -->
-
-  <!--  <p class="powered-by copyright-license-text">-->
-  <!--    © 2022 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>-->
-  <!--  </p>-->
-  <!--  -->
-
-  <!--  <p class="powered-by footer-license-icons">-->
-  <!--    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">-->
-  <!--      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>-->
-  <!--      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>-->
-  <!--      -->
-  <!--        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>-->
-  <!--      -->
-  <!--      -->
-  <!--        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>-->
-  <!--      -->
-  <!--    </a>-->
-  <!--  </p>-->
-
-
-
-
-
-
-
-  <!--  <p class="powered-by">-->
-  <!--    -->
-  <!--       -->
-  <!--      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.-->
-  <!--    -->
-  <!--  </p>-->
-  <!--</footer>-->
-
-  <!--    </div>-->
-  <!--    -->
-  <!--  </div>-->
+        </div>
+      </section>
 
 
   <script src="/js/vendor-bundle.min.fab8b449b814cc9f95b22fcf2e45f05b.js"></script>
