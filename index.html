@@ -618,6 +618,21 @@
     }
     .pub-card:hover::before { opacity: 1; transform: scaleY(1); }
 
+    .pub-more {
+      text-align: left;
+      margin: -24px 0 30px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .pub-more a {
+      color: var(--primary-strong);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--primary);
+      transition: color 0.18s ease, border-color 0.18s ease;
+    }
+    .pub-more a:hover { color: var(--primary); border-bottom-style: solid; }
+
     .pub-venue { flex: 0 0 160px; padding-top: 2px; }
 
     /* 出版物徽标：统一宽度、居中 */
@@ -986,6 +1001,11 @@
           <span class="section-rule"></span>
         </header>
 
+        <p class="pub-more reveal">
+          For more publications and preprints, please visit my
+          <a href="https://scholar.google.com/citations?user=BpjIMQcAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a> ✨
+        </p>
+
         <!-- ICML 2026 -->
         <article class="pub-card reveal">
           <div class="pub-venue"><span class="vb vb--conf">ICML 2026</span></div>
@@ -1217,6 +1237,7 @@
             <div class="pub-title">From Holistic to Fragment: Coupling Denoising and Visual Hierarchies for Video Question Answering</div>
           </div>
         </article>
+
       </div>
     </section>
 
